@@ -40,6 +40,8 @@ fetch("http://localhost:5678/api/works") //utiliser la fonction fetch pour envoy
 
   let projets = [];
 
+
+  
 // Fonction d'affichage des projets
 function afficherProjets(liste) {
   const gallery = document.querySelector('.gallery');

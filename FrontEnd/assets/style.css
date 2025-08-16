@@ -244,7 +244,7 @@ button:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #fdf9f0; /* couleur de fond comme sur ton image */
+   
   display: flex;
   justify-content: center;
   align-items: center;
@@ -282,6 +282,8 @@ button:hover {
 
 /* Bouton */
 .modal-content button {
+	position: absolute;
+	left: 45%;
   background-color: #264d44;
   color: #fff;
   padding: 10px 20px;
@@ -290,6 +292,7 @@ button:hover {
   cursor: pointer;
   font-size: 16px;
   font-family: 'Work Sans', sans-serif;
+  
 }
 
 /* Lien "Mot de passe oublié" */
@@ -300,11 +303,11 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Bouton fermer (facultatif si tu veux garder le X) */
-.modal .close {
+/* Mentions légales */
+.ML {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 24px;
-  cursor: pointer;
+  bottom: 50px; 
+  
+  
 }
+
