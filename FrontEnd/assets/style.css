@@ -265,7 +265,7 @@ button:hover {
 .modal-content h2 {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  color: #264d44; /* couleur du texte "Log In" sur ton image */
+  color: #264d44; 
   margin-bottom: 20px;
 }
 
