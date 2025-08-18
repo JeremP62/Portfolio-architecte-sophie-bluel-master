@@ -240,10 +240,10 @@ button:hover {
 .modal {
   display: none; /* caché par défaut */
   position: fixed;
-  top: 0;
+  top: 180px;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 300px;
    
   display: flex;
   justify-content: center;
@@ -306,8 +306,17 @@ button:hover {
 /* Mentions légales */
 .ML {
   position: absolute;
-  bottom: 50px; 
-  
-  
+  bottom: 50px;   
+}
+
+#indexButton a {
+  color: inherit;      
+  text-decoration: none;
+}
+
+#loginButton a {
+
+  color: inherit;      
+  text-decoration: none;
 }
 
