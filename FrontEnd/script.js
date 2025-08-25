@@ -5,24 +5,32 @@ let projets = [];
 
 const loginButton = document.getElementById('loginButton');
 const btnModifier = document.getElementById('modifierButton');
+const editBar = document.getElementById('editBar');
 
 // --------------------
-// LOGIN / LOGOUT
+// LOGIN / LOGOUT & UI
 // --------------------
 function updateLoginButton() {
     const token = localStorage.getItem('token');
 
-    // Mise à jour texte Login / Logout
+    // Login / Logout
     if (loginButton) loginButton.textContent = token ? 'Logout' : 'Login';
 
-    // Afficher ou masquer le bouton Modifier selon le token
-    if (btnModifier) btnModifier.style.display = token ? 'block' : 'none';
+    // Bouton modifier
+    if (btnModifier) btnModifier.style.display = token ? 'inline-block' : 'none';
+
+    // Filtre par catégories
+    const categoriesContainer = document.querySelector('.categories');
+    if (categoriesContainer) categoriesContainer.style.display = token ? 'none' : 'flex';
+
+    // Barre édition
+    if (editBar) editBar.style.display = token ? 'flex' : 'none';
 }
 
-// Initialisation au chargement
+// Initialisation
 updateLoginButton();
 
-// Gestion du clic Login / Logout
+// Gestion clic Login / Logout
 if (loginButton) {
     loginButton.style.cursor = 'pointer';
     loginButton.addEventListener('click', () => {
@@ -116,19 +124,3 @@ function afficherCategoriesDepuisProjets(projets) {
 // INITIALISATION
 // --------------------
 fetchProjets();
-
-
-
-const editBar = document.getElementById('editBar');
-const token = localStorage.getItem('token');
-
-if (token) {
-    // Affiche la barre en mode édition
-    if (editBar) editBar.style.display = 'flex';
-
-    // Affiche aussi le bouton modifier si nécessaire
-    if (btnModifier) btnModifier.style.display = 'inline-block';
-} else {
-    // Masque le bouton modifier si pas connecté
-    if (btnModifier) btnModifier.style.display = 'none';
-}
