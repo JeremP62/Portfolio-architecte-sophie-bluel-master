@@ -8,6 +8,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -17,7 +20,9 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li id="loginButton"><a href="login.html">Login</a></li>
+			<li id="loginButton" style="cursor:pointer">Login</li>
+
+
 
 
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
@@ -38,6 +43,12 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+
+		<!-- Bouton pour ouvrir la modale -->
+        <button id="modifierButton" class="btn-modifier">
+       <i class="fa-regular fa-pen-to-square"></i> Modifier
+       </button>
+
 		<div class="categories"></div>
 		<div class="gallery">
 			
@@ -61,8 +72,30 @@
 
 
 
+<!-- Nouvelle modale pour ajouter un média -->
+<div class="modal-media" id="modalMedia">
+  <div class="modal-media-content">
+    <span class="close-media">&times;</span>
+    <h2 class="titre-galerie-photo">Galerie photo</h2>
 
-	
+    <!-- Vue 1 : Galerie photo -->
+    <div class="vue-galerie">
+      
+      <div class="gallery-thumbs"></div>
+      <button id="ajouterPhotoBtn">Ajouter une photo</button>
+    </div>
+
+    <!-- Vue 2 : Ajout photo -->
+    <div class="vue-ajout" style="display:none;">
+      <p>Ajout d'une nouvelle photo :</p>
+      <input type="file" id="nouvellePhoto">
+      <input type="text" placeholder="Titre de la photo">
+      <button id="validerAjout">Valider</button>
+      <button id="retourGalerie">Retour</button>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <footer>
