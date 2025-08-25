@@ -4,16 +4,43 @@
 let projets = [];
 
 const loginButton = document.getElementById('loginButton');
-const modalMedia = document.getElementById('modalMedia');
 const btnModifier = document.getElementById('modifierButton');
-const closeMedia = document.querySelector('.close-media');
-const ajouterPhotoBtn = document.getElementById('ajouterPhotoBtn');
-const vueGalerie = document.querySelector('.vue-galerie');
-const vueAjout = document.querySelector('.vue-ajout');
-const retourGalerie = document.getElementById('retourGalerie');
 
 // --------------------
-// FONCTIONS FETCH & AFFICHAGE
+// LOGIN / LOGOUT
+// --------------------
+function updateLoginButton() {
+    const token = localStorage.getItem('token');
+
+    // Mise à jour texte Login / Logout
+    if (loginButton) loginButton.textContent = token ? 'Logout' : 'Login';
+
+    // Afficher ou masquer le bouton Modifier selon le token
+    if (btnModifier) btnModifier.style.display = token ? 'block' : 'none';
+}
+
+// Initialisation au chargement
+updateLoginButton();
+
+// Gestion du clic Login / Logout
+if (loginButton) {
+    loginButton.style.cursor = 'pointer';
+    loginButton.addEventListener('click', () => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            // Déconnexion
+            localStorage.removeItem('token');
+            updateLoginButton();
+            window.location.reload();
+        } else {
+            // Redirection vers login.html
+            window.location.href = 'login.html';
+        }
+    });
+}
+
+// --------------------
+// FETCH & AFFICHAGE DES PROJETS
 // --------------------
 async function fetchProjets() {
     try {
@@ -29,6 +56,7 @@ async function fetchProjets() {
 
 function afficherProjets(liste) {
     const gallery = document.querySelector('.gallery');
+    if (!gallery) return;
     gallery.innerHTML = '';
 
     liste.forEach(projet => {
@@ -46,8 +74,12 @@ function afficherProjets(liste) {
     });
 }
 
+// --------------------
+// FILTRE PAR CATÉGORIES
+// --------------------
 function afficherCategoriesDepuisProjets(projets) {
     const categoriesContainer = document.querySelector('.categories');
+    if (!categoriesContainer) return;
     categoriesContainer.innerHTML = '';
 
     const categoriesSet = new Set(projets.map(p => p.category.name));
@@ -81,71 +113,22 @@ function afficherCategoriesDepuisProjets(projets) {
 }
 
 // --------------------
-// MODALE MEDIA
-// --------------------
-if (btnModifier) {
-    btnModifier.addEventListener('click', () => {
-        modalMedia.style.display = 'flex';
-    });
-}
-
-if (closeMedia) {
-    closeMedia.addEventListener('click', () => {
-        modalMedia.style.display = 'none';
-        vueAjout.style.display = 'none';
-        vueGalerie.style.display = 'block';
-    });
-}
-
-window.addEventListener('click', (e) => {
-    if (e.target === modalMedia) {
-        modalMedia.style.display = 'none';
-        vueAjout.style.display = 'none';
-        vueGalerie.style.display = 'block';
-    }
-});
-
-if (ajouterPhotoBtn) {
-    ajouterPhotoBtn.addEventListener('click', () => {
-        vueGalerie.style.display = 'none';
-        vueAjout.style.display = 'block';
-    });
-}
-
-if (retourGalerie) {
-    retourGalerie.addEventListener('click', () => {
-        vueAjout.style.display = 'none';
-        vueGalerie.style.display = 'block';
-    });
-}
-
-// --------------------
-// LOGIN / LOGOUT
-// --------------------
-function updateLoginButton() {
-    const token = localStorage.getItem('token');
-    if (loginButton) loginButton.textContent = token ? 'Logout' : 'Login';
-}
-
-updateLoginButton();
-
-if (loginButton) {
-    loginButton.style.cursor = 'pointer';
-    loginButton.addEventListener('click', () => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            // Déconnexion
-            localStorage.removeItem('token');
-            updateLoginButton();
-            window.location.reload();
-        } else {
-            // Redirection vers login.html
-            window.location.href = 'login.html';
-        }
-    });
-}
-
-// --------------------
 // INITIALISATION
 // --------------------
 fetchProjets();
+
+
+
+const editBar = document.getElementById('editBar');
+const token = localStorage.getItem('token');
+
+if (token) {
+    // Affiche la barre en mode édition
+    if (editBar) editBar.style.display = 'flex';
+
+    // Affiche aussi le bouton modifier si nécessaire
+    if (btnModifier) btnModifier.style.display = 'inline-block';
+} else {
+    // Masque le bouton modifier si pas connecté
+    if (btnModifier) btnModifier.style.display = 'none';
+}

@@ -14,6 +14,14 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+
+	<!-- Barre d'édition visible uniquement si connecté -->
+<div id="editBar" style="display: none;">
+    <i class="fa-regular fa-pen-to-square"></i>
+    <span>Mode édition</span>
+</div>
+
+
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -67,35 +75,6 @@
 			<input type="submit" value="Envoyer">
 		</form>
 	</section>
-
-
-
-
-
-<!-- Nouvelle modale pour ajouter un média -->
-<div class="modal-media" id="modalMedia">
-  <div class="modal-media-content">
-    <span class="close-media">&times;</span>
-    <h2 class="titre-galerie-photo">Galerie photo</h2>
-
-    <!-- Vue 1 : Galerie photo -->
-    <div class="vue-galerie">
-      
-      <div class="gallery-thumbs"></div>
-      <button id="ajouterPhotoBtn">Ajouter une photo</button>
-    </div>
-
-    <!-- Vue 2 : Ajout photo -->
-    <div class="vue-ajout" style="display:none;">
-      <p>Ajout d'une nouvelle photo :</p>
-      <input type="file" id="nouvellePhoto">
-      <input type="text" placeholder="Titre de la photo">
-      <button id="validerAjout">Valider</button>
-      <button id="retourGalerie">Retour</button>
-    </div>
-  </div>
-</div>
-
 </main>
 
 <footer>
