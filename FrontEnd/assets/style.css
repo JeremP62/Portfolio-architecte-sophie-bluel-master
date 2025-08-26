@@ -294,10 +294,12 @@ footer nav {
 
 .modal-content h2 {
   font-family: "Work Sans", sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   margin: 0 0 20px;
   color: #000;
   text-align: center;
+  font-weight: 400;
+  
 }
 
 .close-gallery {
@@ -412,7 +414,6 @@ footer nav {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  
   display: block;
 }
 

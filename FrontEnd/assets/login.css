@@ -276,3 +276,9 @@ footer nav ul li.ML {
 }
 
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset, 0px 4px 14px 0px #00000017 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+
