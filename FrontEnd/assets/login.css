@@ -154,8 +154,6 @@ nav li:hover { color: #B1663C; }
 	box-shadow: 0px 4px 14px 0px #00000017;
 }
 .modal-content button {
-
-   
     display: block;
     width: 179px;
     height: 36px;
@@ -174,6 +172,7 @@ nav li:hover { color: #B1663C; }
     border: none; 
 	margin: 20px auto;
 }
+
 .modal-content a {
 
     margin-top: 10px;
@@ -276,9 +275,4 @@ footer nav ul li.ML {
     letter-spacing: 0;
 }
 
-/* Champ e-mail et mot de passe : toujours blanc */
-input[type="email"],
-input[type="password"] {
-    background-color: #fff !important;
-    color: #000; /* texte en noir */
-}
+

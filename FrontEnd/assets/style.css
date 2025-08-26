@@ -215,7 +215,7 @@ footer nav {
     padding: 0 20px;
     font-family: 'Work Sans', sans-serif;
     font-size: 16px;
-    z-index: 2000; /* au-dessus de tout */
+    z-index: 1000; /* au-dessus de tout */
 }
 
 #editBar i {
@@ -261,4 +261,219 @@ footer nav {
 	justify-content: center;
     gap: 15px; 
 	margin-bottom: 50px;
+}
+
+
+/* ---- MODALE GALERIE PHOTO ---- */
+.modal {
+  display: none; /* cachée par défaut */
+  position: fixed;
+  z-index: 3000; /* au-dessus de tout */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* fond assombri */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 630px;
+  height: 688px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  overflow: hidden; /* empêche les débordements */
+}
+
+.modal-content h2 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 24px;
+  margin: 0 0 20px;
+  color: #000;
+  text-align: center;
+}
+
+.close-gallery {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Grille d’images dans la modale */
+.gallery-modal {
+  display: grid;
+  grid-template-columns: repeat(5, 78px); /* colonnes de 78px */
+  justify-content: center; /* aligne les images à gauche */
+  gap: 27px 7px;
+  max-height: 600px;  /* limite la hauteur */
+  overflow-y: auto;   /* scroll vertical si nécessaire */
+  width: 100%;        /* prend toute la largeur disponible */
+  padding: 0 10px;    /* petit padding horizontal */
+  margin-top: 20px;
+}
+
+.gallery-modal figure {
+  position: relative;
+  width: 78px;
+  height: 104px;
+  margin: 0;
+}
+
+.gallery-modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* garde les proportions et recadre si nécessaire */
+  border-radius: 4px;
+  display: block;
+}
+
+/* Bouton poubelle sur chaque image */
+.gallery-modal .delete-icon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.8);
+  color: #FFFFFF;
+  font-size: 12px;
+  
+  padding: 2px 4px;
+}
+
+/* Trait sous les photos */
+.gallery-divider {
+    width: 420px;
+    height: 1px; /* 0 px ne s'affiche pas, donc 1px */
+    background-color: #D3D3D3; /* gris clair, à adapter à ta maquette */
+    margin: 70px auto 38px; /* centré et un peu d'espace au-dessus et en dessous */
+}
+
+/* Bouton Ajouter une photo */
+.btn-add-photo {
+    width: 237px;
+    height: 36px;
+    background-color: #1D6154;
+    color: #fff;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+
+/* Modale Ajout Photo */
+.add-photo-content {
+  width: 630px;
+  height: 670px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#modalAddPhoto .close-add-photo {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.photo-upload {
+  width: 420px;
+  height: 169px;
+  background: #E8F1F6;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.photo-upload img.preview {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  
+  display: block;
+}
+
+.photo-upload input[type="file"] {
+  display: none;
+}
+
+.photo-label span {
+  width: 173px;
+  height: 36px;
+  background: #CBD6DC;
+  padding: 8px 12px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+#formAddPhoto input,
+#formAddPhoto select {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 4px 14px 0px #00000017;
+
+}
+
+.btn-validate {
+  width: 237px;
+  height: 36px;
+  padding: 10px;
+  background: #A7A7A7;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 20px auto 0;
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+}
+
+
+.btn-validate:disabled {
+  background: #A7A7A7;    
+  cursor: not-allowed;
+}
+
+.btn-validate.active {
+  background: #1D6154;
+  cursor: pointer;
+}
+
+.formajpg {
+    
+	margin-top: 10px;
+	font-size: 10px;
+}
+
+.photo-upload i {
+  font-size: 76px;   
+  color: #CBD6DC;    
+  margin-bottom: 10px; 
 }

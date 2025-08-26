@@ -74,6 +74,60 @@
 			<input type="submit" value="Envoyer">
 		</form>
 	</section>
+
+
+<div id="modalGallery" class="modal">
+  <div class="modal-content">
+    <span class="close-gallery">&times;</span>
+    <h2>Galerie photo</h2>
+    <div class="modal-body gallery-modal">
+      <!-- Les images seront injectées ici via JS -->
+    </div>
+    <!-- Footer fixe, hors galerie -->
+    <div class="gallery-footer">
+      <div class="gallery-divider"></div>
+      <button class="btn-add-photo">Ajouter une photo</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modale Ajout Photo -->
+<div id="modalAddPhoto" class="modal">
+  <div class="modal-content add-photo-content">
+    <span class="close-add-photo">&times;</span>
+    <h2>Ajout photo</h2>
+
+    <form id="formAddPhoto">
+      <div class="photo-upload">
+		<i class="fa-regular fa-image"></i>
+
+        <label for="photoFile" class="photo-label">
+          <span>+ Ajouter photo</span>
+        </label>
+        <input type="file" id="photoFile" accept="image/png, image/jpeg" required>
+        <p class="formajpg">jpg, png : 4mo max</p>
+      </div>
+
+      <label for="photoTitle">Titre</label>
+      <input type="text" id="photoTitle" required>
+
+      <label for="photoCategory">Catégorie</label>
+      <select id="photoCategory" required>
+        <!-- Options chargées depuis l’API -->
+      </select>
+
+      <button type="submit" class="btn-validate">Valider</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
 </main>
 
 <footer>
