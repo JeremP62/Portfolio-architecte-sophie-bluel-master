@@ -192,7 +192,7 @@ nav img {
    FOOTER
    ========================= */
 footer {
-	
+	background-color: #FFFFFF;
 	padding: 20px;
 }
 footer nav {
@@ -266,15 +266,15 @@ footer nav {
 
 /* ---- MODALE GALERIE PHOTO ---- */
 .modal {
-  display: none; /* cachée par défaut */
+ 
   position: fixed;
-  z-index: 3000; /* au-dessus de tout */
+  z-index: 3000; 
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* fond assombri */
-  display: flex;
+  background-color: rgba(0, 0, 0, 0.6); 
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -288,8 +288,7 @@ footer nav {
   position: relative;
   display: flex;
   flex-direction: column;
-  
-  overflow: hidden; /* empêche les débordements */
+  overflow: hidden; 
 }
 
 .modal-content h2 {
@@ -402,7 +401,7 @@ footer nav {
   height: 169px;
   background: #E8F1F6;
   border-radius: 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -477,4 +476,77 @@ footer nav {
   font-size: 76px;   
   color: #CBD6DC;    
   margin-bottom: 10px; 
+}
+
+.form-divider {
+  width: 420px;   
+  height: 0;            
+  border: 1px solid #B3B3B3;
+  margin-top: 40px; 
+  margin-bottom: 32px;
+}
+
+.photo-upload img.preview {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: none; /* masqué par défaut */
+}
+
+.photo-upload.has-image i,
+.photo-upload.has-image .photo-label,
+.photo-upload.has-image .formajpg {
+  display: none;
+}
+
+.photo-upload.has-image img.preview {
+  display: block; /* l’aperçu devient visible */
+}
+
+
+
+.modal-content {
+  position: relative; /* nécessaire pour positionner la flèche */
+}
+
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.back-arrow:hover {
+  color: #666;
+}
+
+.modal:target {
+  display: flex; 
+}
+
+.fa-image {
+  cursor: default;
+}
+
+.photo-upload i {
+  cursor: default; /* icône non cliquable */
+}
+
+.photo-upload .photo-label {
+  cursor: pointer; /* texte cliquable */
+  display: inline-block; /* optionnel, pour bien capter le clic */
+}
+
+#photoTitle,
+#photoCategory {
+  width: 420px;        /* même largeur que photo-upload */
+  margin: 10px auto;   /* centre horizontalement */
+  display: block;      /* s’assure qu’ils respectent margin auto */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
