@@ -280,8 +280,8 @@ footer nav {
 }
 
 .modal-content {
-  width: 630px;
-  height: 688px;
+  width: 560px;
+  height: 590px;
   background: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -347,7 +347,6 @@ footer nav {
   background: rgba(0,0,0,0.8);
   color: #FFFFFF;
   font-size: 12px;
-  
   padding: 2px 4px;
 }
 
@@ -377,8 +376,8 @@ footer nav {
 
 /* Modale Ajout Photo */
 .add-photo-content {
-  width: 630px;
-  height: 670px;
+  width: 560px;
+  height: 590px;
   background: #fff;
   border-radius: 10px;
   padding: 20px;
