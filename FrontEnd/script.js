@@ -133,9 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         afficherProjets(projetsFiltres);
       }
-    }, { once: true });
-  }
-
+  });
+}
   fetchProjets();
 
   // --------------------
@@ -243,6 +242,14 @@ document.addEventListener('DOMContentLoaded', () => {
   async function chargerCategories() {
     if (!photoCategory) return;
     photoCategory.innerHTML = '';
+
+const defaultOption = document.createElement('option');
+  defaultOption.value = '';
+  defaultOption.textContent = '';
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  photoCategory.appendChild(defaultOption);
+
     try {
       const response = await fetch("http://localhost:5678/api/categories");
       if (!response.ok) throw new Error('Erreur API catégories');
@@ -384,3 +391,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+
+
+
+
+
+
+
+
+  

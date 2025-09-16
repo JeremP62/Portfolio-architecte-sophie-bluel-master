@@ -541,7 +541,7 @@ footer nav {
 #photoTitle,
 #photoCategory {
   width: 420px;        /* même largeur que photo-upload */
-  margin: 10px auto;   /* centre horizontalement */
+  margin: 15px auto;   /* centre horizontalement */
   display: block;      /* s’assure qu’ils respectent margin auto */
   padding: 10px;
   font-size: 1rem;
