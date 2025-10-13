@@ -549,3 +549,8 @@ footer nav {
   border-radius: 5px;
   box-sizing: border-box;
 }
+
+.categories button.active {
+  background-color: #1D6154;
+  color: #fff;
+}
