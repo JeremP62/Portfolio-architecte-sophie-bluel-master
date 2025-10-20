@@ -1,21 +1,12 @@
-# Portfolio-architecte-sophie-bluel
+# Portfolio Architecte Sophie Bluel
 
-Code du projet 6 d'intégrateur web.
+## Présentation
 
-## Architecture
+Ce dépôt contient le code du stage – Projet 6 « Intégrateur Web » – consistant à créer le portfolio de l’architecte **Sophie Bluel**.  
+L’objectif est de proposer un site web moderne, responsive et accessible permettant de présenter les projets de l’architecte, sa philosophie, ses services et de faciliter la prise de contact.
 
-Ce repo git contient les 2 briques logicielles du projet 
-- Frontend
-- Backend
+## Technologies utilisées
 
-## Pour le lancer le code
-### Backend
-Ouvrir le dossier Backend et lire le README.md
-
-### Frontend
-Ouvrir le dossier Frontend et lancer liveserver de votre IDE
- 
-## Astuce
- 
-Si vous désirez afficher le code du backend et du frontend, faites le dans 2 instances de VSCode différentes pour éviter tout problème
-"# Portfolio-architecte-sophie-bluel-master" 
+- HTML5 & CSS3
+- JavaScript
+- Git & GitHub pour le versionnage
