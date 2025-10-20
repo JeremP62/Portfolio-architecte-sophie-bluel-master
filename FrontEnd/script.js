@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ? formAddPhoto.querySelector(".btn-validate")
     : null;
 
-  /*----------------------- zone d’upload------------------------*/
+  /*--------------------------------------------------------------- zone d’upload----------------------------------------------------------------------------*/
   const photoUploadDiv = document.querySelector(".photo-upload");
   const photoLabel = photoUploadDiv
     ? photoUploadDiv.querySelector(".photo-label")

@@ -83,7 +83,16 @@ nav li {
 	cursor: pointer;
 }
 nav li:hover {
-	color: #B1663C;
+	font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000;
+    background-color: transparent;
+    cursor: pointer;
 }
 nav img {
 	width: 20px;
@@ -164,6 +173,7 @@ nav img {
 	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
+  padding-bottom: 45px;
 }
 #contact input, #contact textarea {
 	margin: 10px 0 20px 0;
@@ -554,3 +564,4 @@ footer nav {
   background-color: #1D6154;
   color: #fff;
 }
+
