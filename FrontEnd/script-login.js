@@ -31,3 +31,6 @@ loginForm.addEventListener("submit", (e) => {
       errorMessage.textContent = "Erreur de connexion au serveur";
     });
 });
+
+ /*------------------------------------------test-----------------------------------------------------------*/
+

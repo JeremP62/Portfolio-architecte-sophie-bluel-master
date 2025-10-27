@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
   /*-----------------------------------------------------------------------FETCH & AFFICHAGE DES PROJETS----------------------------------------------------------*/
   
   async function fetchProjets() {
@@ -92,9 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function afficherProjets(liste) {
+    console.log(liste);
     if (!galleryEl) return;
     galleryEl.innerHTML = "";
-
+    
     liste.forEach((projet) => {
       const figure = document.createElement("figure");
       const img = document.createElement("img");
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         img.src = photo.imageUrl;
         img.alt = photo.title;
-        trash.classList.add("fa-regular", "fa-trash-can", "delete-icon");
+        trash.classList.add("fa-regular", "fa-trash-can", "delete-icon"); /* icone  */
 
         trash.addEventListener("click", async () => {
           const token = localStorage.getItem("token");
